@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillTags = document.querySelectorAll('.skill-tag');
     skillTags.forEach(tag => {
         tag.addEventListener('click', function() {
-            this.style.transform = 'scale(1.1)';
+            this.classList.add('skill-tag-clicked');
             setTimeout(() => {
-                this.style.transform = 'scale(1)';
+                this.classList.remove('skill-tag-clicked');
             }, 200);
         });
     });
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
         card.addEventListener('click', function() {
-            this.style.transform = 'scale(1.02)';
+            this.classList.add('project-card-clicked');
             setTimeout(() => {
-                this.style.transform = 'translateY(-8px)';
+                this.classList.remove('project-card-clicked');
             }, 200);
         });
     });
@@ -82,18 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    });
-
-    // Add hover effect to contact links
-    const contactLinks = document.querySelectorAll('.contact-item a');
-    contactLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(5px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0)';
-        });
     });
 
     // Console message
